@@ -1,22 +1,9 @@
 import React from "react";
 import { useAppContext } from "../../../contexts/AppContext";
+import { QueryListItem } from "./QueryListItem/QueryListItem";
 import classes from "./styles.module.css";
-import { BiPlayCircle } from "react-icons/bi";
 
-const QueryListItem = () => {
-  return (
-    <div className="p-4 flex items-center border-b-2 border-gray-200">
-      <div className="flex gap-2 items-center px-2">
-        <div className="text-[#228B22]">
-          <BiPlayCircle size={"1.5rem"} />
-        </div>
-        <p className="text-lg font-medium">select * from users</p>
-      </div>
-    </div>
-  );
-};
-
-const QuerySidebar = ({ headerList }) => {
+const QuerySidebar = ({ queries }) => {
   const { courseSideBarCollapsed } = useAppContext();
   return (
     <>
@@ -30,8 +17,8 @@ const QuerySidebar = ({ headerList }) => {
         </div>
         <div className="row_lecture_sidebar">
           <div className="w-full flex flex-col">
-            {headerList.map((headerData, index) => {
-              return <QueryListItem key={index} headerData={headerData} />;
+            {queries.map((query, index) => {
+              return <QueryListItem key={index} query={query} />;
             })}
           </div>
         </div>
@@ -47,8 +34,8 @@ const QuerySidebar = ({ headerList }) => {
         </div>
         <div className="row_lecture_sidebar">
           <div className="w-full flex flex-col">
-            {headerList.map((headerData, index) => {
-              return <QueryListItem key={index} headerData={headerData} />;
+            {queries.map((query, index) => {
+              return <QueryListItem key={index} query={query} />;
             })}
           </div>
         </div>
