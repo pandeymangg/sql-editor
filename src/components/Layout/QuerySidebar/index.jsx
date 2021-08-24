@@ -3,8 +3,9 @@ import { useAppContext } from "../../../contexts/AppContext";
 import { QueryListItem } from "./QueryListItem/QueryListItem";
 import classes from "./styles.module.css";
 
-const QuerySidebar = ({ queries }) => {
+const QuerySidebar = ({ queries, setQueryIndex }) => {
   const { courseSideBarCollapsed } = useAppContext();
+
   return (
     <>
       <div
@@ -18,7 +19,14 @@ const QuerySidebar = ({ queries }) => {
         <div className="row_lecture_sidebar">
           <div className="w-full flex flex-col">
             {queries.map((query, index) => {
-              return <QueryListItem key={index} query={query} />;
+              return (
+                <QueryListItem
+                  key={index}
+                  query={query}
+                  setQueryIndex={setQueryIndex}
+                  queryIndex={index}
+                />
+              );
             })}
           </div>
         </div>
