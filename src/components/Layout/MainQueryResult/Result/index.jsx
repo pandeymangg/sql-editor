@@ -3,9 +3,9 @@ import React from "react";
 const Result = ({ result }) => {
   return (
     <>
-      <table className="w-full mt-2 sm:my-2 h-full text-center text-xs sm:text-base table-auto border-collapse border border-black">
+      <table className="w-full mt-2 sm:my-2 h-full text-center text-xs sm:text-base table-auto">
         <thead>
-          <tr className="bg-black text-white">
+          <tr className="bg-gray-100 text-gray-900">
             <th className="border border-black">Order ID</th>
             <th className="border border-black">Customer Id</th>
             <th className="border border-black">Employee Id</th>
