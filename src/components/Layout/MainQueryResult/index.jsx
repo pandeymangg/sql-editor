@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineCode } from "react-icons/ai";
 import { queryData } from "../../../../data";
+import Result from "./Result";
 
 const MainQueryResult = ({
   queriesState,
@@ -10,25 +11,29 @@ const MainQueryResult = ({
 }) => {
   // const {querySideBarCollapsed, setQuerySideBarCollapsed} = useAppContext()
 
+  const [result, setResult] = useState();
   const handleQueriesChange = () => {
     let data = queryData.filter((element) => element.query === currentQuery);
     let queries = [currentQuery, ...queriesState];
+    queries = [...new Set(queries)];
 
     if (data.length) {
+      data = data[0].result;
       setQueriesState(queries);
+      setResult(data);
     }
   };
 
   return (
     <div className="flex-1 bg-white py-4 overflow-auto">
-      <div className="h-full w-full flex flex-col px-12 mx-auto">
-        <div className="flex flex-col">
-          <span className="text-2xl text-gray-900 font-bold mb-10">
-            SQL Query
+      <div className="h-full w-full flex flex-col px-4 md:px-12 mx-auto">
+        <div className="flex flex-col w-full h-full">
+          <span className="text-4xl text-gray-900 font-bold mb-10">
+            Execute SQL Query
           </span>
 
           <div className="flex flex-col md:flex-row md:items-center gap-4">
-            <div className="relative flex flex-col md:flex-row md:w-4/5">
+            <div className="relative flex flex-col md:flex-row w-full">
               <span className="z-10 h-full leading-snug font-normal text-center absolute bg-transparent rounded text-base flex items-center justify-center w-8 pl-3 py-3">
                 <AiOutlineCode />
               </span>
@@ -47,6 +52,10 @@ const MainQueryResult = ({
             >
               Execute!
             </button>
+          </div>
+
+          <div className="w-full h-full flex flex-col justify-center overflow-scroll">
+            {result && <Result result={result} />}
           </div>
         </div>
       </div>

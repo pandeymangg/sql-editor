@@ -42,7 +42,14 @@ const QuerySidebar = ({ queries, setCurrentQuery }) => {
         <div>
           <div className="w-full flex flex-col">
             {queries.map((query, index) => {
-              return <QueryListItem key={index} query={query} />;
+              return (
+                <QueryListItem
+                  key={index}
+                  query={query}
+                  setCurrentQuery={setCurrentQuery}
+                  phoneView={true}
+                />
+              );
             })}
           </div>
         </div>
