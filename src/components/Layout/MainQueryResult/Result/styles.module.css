@@ -1,0 +1,19 @@
+.tableStyle {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tableStyle {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tableStyle th {
+  padding: 0.5rem 1rem;
+}
+
+.tableStyle td {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  width: 11.11%;
+}

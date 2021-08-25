@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { AiOutlineCode } from "react-icons/ai";
 import { queryData } from "../../../../data";
 import Result from "./Result";
 import dynamic from "next/dynamic";
@@ -28,21 +27,14 @@ const MainQueryResult = ({
 
   return (
     <div className="flex-1 bg-white py-4 overflow-auto">
-      <div className="h-full w-full flex flex-col px-4 md:px-12 mx-auto">
+      <div className="w-full flex flex-col px-4 md:px-12 mx-auto">
         <div className="flex flex-col w-full h-full">
           <span className="text-2xl text-gray-900 font-bold mb-4">
             Execute SQL Query
           </span>
 
-          <div className="flex flex-col gap-4 mb-8">
+          <div className="flex flex-col gap-4 mb-4">
             <div className="relative flex flex-col md:flex-row w-full">
-              {/* <input
-                value={currentQuery}
-                type="text"
-                placeholder="Write SQL query here..."
-                className="px-3 py-3 placeholder-gray-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring ring-primary w-full pl-10"
-                onChange={(e) => setCurrentQuery(e.target.value)}
-              /> */}
               <CodeMirror value={currentQuery} setValue={setCurrentQuery} />
             </div>
             <button
@@ -54,12 +46,8 @@ const MainQueryResult = ({
             </button>
           </div>
 
-          <div className="w-full h-full flex flex-col justify-center">
-            {result && (
-              <div className="w-full h-full overflow-scroll">
-                <Result result={result} />
-              </div>
-            )}
+          <div className="w-full overflow-auto">
+            {result && <Result result={result} />}
           </div>
         </div>
       </div>

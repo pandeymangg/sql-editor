@@ -3,6 +3,7 @@ import "codemirror/mode/sql/sql";
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/duotone-light.css";
 import "codemirror/theme/ttcn.css";
+import "codemirror/theme/eclipse.css";
 import "codemirror/keymap/sublime";
 
 const Editor = (props) => (
@@ -18,7 +19,7 @@ const Editor = (props) => (
         mode: "sql",
         lineNumbers: true,
         // theme: "duotone-light",
-        theme: "ttcn",
+        theme: "eclipse",
         keyMap: "sublime",
       }}
       onChange={(_, __, value) => {
