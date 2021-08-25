@@ -31,7 +31,7 @@ const QuerySidebar = ({ queries, setCurrentQuery }) => {
         </div>
       </div>
       <div
-        className={`${classes.sidebar} query_sidebar overflow-auto px-0 top-0 bottom-0 bg-white h-full flex flex-col border-r-2 border-gray-200`}
+        className={`${classes.sidebar} query_sidebar overflow-auto px-0 top-0 bottom-0 bg-white flex flex-col border-r-2 border-gray-200 h-full`}
         style={{ height: querySideBarCollapsed && 0 }}
       >
         <div className="query_sidebar_header w-full py-4 px-2 bg-gray-50">

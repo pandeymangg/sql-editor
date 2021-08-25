@@ -12,7 +12,7 @@ const Editor = (props) => (
     style={{ height: "30vh" }}
   >
     <CodeMirror
-      className="w-full h-full text-base shadow-md overflow-hidden"
+      className="w-full h-full text-sm sm:text-base shadow-md overflow-hidden"
       {...props}
       value={props.value}
       options={{
