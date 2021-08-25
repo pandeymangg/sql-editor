@@ -1,14 +1,26 @@
 import { UnControlled as CodeMirror } from "react-codemirror2";
 import "codemirror/mode/sql/sql";
 import "codemirror/lib/codemirror.css";
+import "codemirror/theme/duotone-light.css";
+import "codemirror/theme/ttcn.css";
+import "codemirror/keymap/sublime";
 
 const Editor = (props) => (
-  <div style={{ width: 500, height: 500 }}>
+  <div
+    className="border-4 border-gray-100 rounded-md w-full"
+    style={{ height: "30vh" }}
+  >
     <CodeMirror
-      className="codemirror-wrapper"
+      className="w-full h-full text-base shadow-md overflow-hidden"
       {...props}
-      value={props.query}
-      options={{ mode: "sql", lineNumbers: true }}
+      value={props.value}
+      options={{
+        mode: "sql",
+        lineNumbers: true,
+        // theme: "duotone-light",
+        theme: "ttcn",
+        keyMap: "sublime",
+      }}
       onChange={(_, __, value) => {
         props.setValue(value);
       }}

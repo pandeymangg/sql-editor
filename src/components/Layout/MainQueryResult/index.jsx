@@ -34,11 +34,8 @@ const MainQueryResult = ({
             Execute SQL Query
           </span>
 
-          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-8">
+          <div className="flex flex-col gap-4 mb-8">
             <div className="relative flex flex-col md:flex-row w-full">
-              <span className="z-10 h-full leading-snug font-normal text-center absolute bg-transparent rounded text-base flex items-center justify-center w-8 pl-3 py-3">
-                <AiOutlineCode />
-              </span>
               {/* <input
                 value={currentQuery}
                 type="text"
@@ -49,7 +46,7 @@ const MainQueryResult = ({
               <CodeMirror value={currentQuery} setValue={setCurrentQuery} />
             </div>
             <button
-              className="bg-primary text-white active:bg-indigo-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+              className="bg-primary w-40 text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
               type="button"
               onClick={() => handleQueriesChange()}
             >
