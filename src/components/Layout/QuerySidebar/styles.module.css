@@ -10,7 +10,7 @@
   .sidebar {
     display: inline-block;
     width: 100%;
-    transition: height 0.1s ease;
+    transition: height 0.3s ease;
   }
   .sidebardesktop {
     display: none;
