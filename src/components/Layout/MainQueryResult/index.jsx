@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { AiOutlineCode } from "react-icons/ai";
 import { queryData } from "../../../../data";
 import Result from "./Result";
+import dynamic from "next/dynamic";
+const CodeMirror = dynamic(import("../../CodeMirror"), { ssr: false });
 
 const MainQueryResult = ({
   queriesState,
@@ -37,13 +39,14 @@ const MainQueryResult = ({
               <span className="z-10 h-full leading-snug font-normal text-center absolute bg-transparent rounded text-base flex items-center justify-center w-8 pl-3 py-3">
                 <AiOutlineCode />
               </span>
-              <input
+              {/* <input
                 value={currentQuery}
                 type="text"
                 placeholder="Write SQL query here..."
                 className="px-3 py-3 placeholder-gray-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring ring-primary w-full pl-10"
                 onChange={(e) => setCurrentQuery(e.target.value)}
-              />
+              /> */}
+              <CodeMirror value={currentQuery} setValue={setCurrentQuery} />
             </div>
             <button
               className="bg-primary text-white active:bg-indigo-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
