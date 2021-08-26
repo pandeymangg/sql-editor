@@ -40,7 +40,7 @@ const MainQueryResult = ({
             <CodeMirror value={currentQuery} setValue={setCurrentQuery} />
             <div className="editor-controls flex gap-4">
               <button
-                className="bg-primary text-white font-bold uppercase text-xs md:text-sm px-3 py-2 md:px-6 md:py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none"
+                className="bg-green-900 text-green-100 font-bold uppercase text-xs md:text-sm px-3 py-2 md:px-6 md:py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none"
                 type="button"
                 onClick={() => handleQueriesChange()}
               >

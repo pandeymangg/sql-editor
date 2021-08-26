@@ -4,7 +4,7 @@ import Home from "../components/Home";
 
 export default function HomePage() {
   return (
-    <Layout>
+    <Layout docTitle="SQL Editor" metaDescription="SQL Editor made for atlan">
       <Header />
       <Home />
     </Layout>
