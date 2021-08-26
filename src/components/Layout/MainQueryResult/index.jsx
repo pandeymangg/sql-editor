@@ -3,7 +3,11 @@ import { queryData } from "../../../../data";
 import Result from "./Result";
 import { BsPlayFill, BsX } from "react-icons/bs";
 import dynamic from "next/dynamic";
-const CodeMirror = dynamic(import("../../CodeMirror"), { ssr: false });
+import Loader from "../../CodeMirror/Loader";
+const CodeMirror = dynamic(import("../../CodeMirror"), {
+  ssr: false,
+  loading: () => <Loader />,
+});
 
 const MainQueryResult = ({
   queriesState,
