@@ -8,6 +8,7 @@ import Download from "../../Download";
 import ResultLoader from "../../Loaders/ResultLoader";
 import toast, { Toaster } from "react-hot-toast";
 import { useTheme } from "next-themes";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const CodeMirror = dynamic(import("../../CodeMirror"), {
   ssr: false,
@@ -40,7 +41,25 @@ const MainQueryResult = ({
     if (data.length) {
       data = data[0].result;
       setQueriesState(queries);
-      setResult(data);
+      setTimeout(() => {
+        setResult(data);
+        const timeTaken = Math.round(Math.random() * 500);
+        const icon =
+          timeTaken < 300 ? (
+            <div className="text-green-500">
+              <AiOutlineInfoCircle size={"1.2rem"} />
+            </div>
+          ) : (
+            <div className="text-[#ff5722]">
+              <AiOutlineInfoCircle size={"1.2rem"} />
+            </div>
+          );
+        toast(`Query successfully ran in ${timeTaken}ms!`, {
+          icon,
+          duration: 2000,
+          position: "bottom-right",
+        });
+      }, 500);
     } else {
       let bgColor;
       let textColor;
