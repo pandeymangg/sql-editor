@@ -11,7 +11,7 @@ const QuerySidebar = ({ queries, setCurrentQuery }) => {
       <div
         className={`${classes.sidebardesktop} query_sidebar md:sticky overflow-auto px-0 h-full top-0  flex flex-col border-r-2 border-gray-200 dark:border-darkBorder`}
       >
-        <div className="query_sidebar_header w-full p-4">
+        <div className="query_sidebar_header w-full p-4 border-b-2 border-gray-100 dark:border-darkBorder">
           <h2 className="text-lg font-semibold">
             Choose a query from the list below:
           </h2>
