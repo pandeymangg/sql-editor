@@ -72,7 +72,7 @@ const MainQueryResult = ({
 
           {!result && (
             <div className="flex md:hidden">
-              <p className="font-semibold text-gray-900 text-base text-center">
+              <p className="font-semibold text-base text-center">
                 Click the little down arrow in the header to open the sample
                 queries menu, you can select any query from that menu!
               </p>
