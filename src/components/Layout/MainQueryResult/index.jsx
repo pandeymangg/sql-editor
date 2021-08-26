@@ -29,10 +29,10 @@ const MainQueryResult = ({
   };
 
   return (
-    <div className="flex-1 bg-white py-4 overflow-auto">
+    <div className="flex-1 py-4 overflow-auto">
       <div className="w-full flex flex-col px-4 md:px-12 mx-auto">
         <div className="flex flex-col w-full h-full">
-          <span className="text-xl md:text-2xl text-gray-900 font-bold mb-4">
+          <span className="text-xl md:text-2xl font-bold mb-4">
             Execute SQL Query
           </span>
 

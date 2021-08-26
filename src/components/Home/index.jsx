@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <div
-      className="lecture_page_layout flex flex-col md:flex-row w-full border-t-2 border-gray-200"
+      className="lecture_page_layout flex flex-col md:flex-row w-full border-t-2 border-gray-200 dark:border-darkBorder"
       style={{ minHeight: "unset", height: "calc(100vh - 3.5rem)" }}
     >
       <QuerySidebar queries={queriesState} setCurrentQuery={setCurrentQuery} />

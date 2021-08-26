@@ -3,12 +3,7 @@ import Head from "next/head";
 
 const Layout = ({ docTitle, metaDescription, bgColor = "#fff", children }) => {
   return (
-    <div
-      className="layout"
-      style={{
-        backgroundColor: bgColor,
-      }}
-    >
+    <div className="layout text-gray-900 dark:text-gray-50 bg-white dark:bg-bgDark">
       <Head>
         {docTitle && <title>{docTitle}</title>}
 

@@ -5,7 +5,7 @@ export const QueryListItem = ({ query, setCurrentQuery, phoneView }) => {
   const { querySideBarCollapsed, setQuerySideBarCollapsed } = useAppContext();
   return (
     <div
-      className="p-4 cursor-pointer flex items-center border-b-2 border-gray-200 hover:scale-105 hover:shadow-lg"
+      className="p-4 cursor-pointer flex items-center border-b-2 border-gray-200 dark:border-darkBorder hover:scale-105 hover:shadow-lg"
       onClick={() => {
         setCurrentQuery(query);
         if (phoneView) {
