@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { queryData } from "../../../../data";
 // import Result from "./Result";
 import { BsPlayFill, BsX } from "react-icons/bs";
@@ -6,6 +6,9 @@ import dynamic from "next/dynamic";
 import EditorSkeleton from "../../Loaders/EditorSkeleton";
 import Download from "../../Download";
 import ResultLoader from "../../Loaders/ResultLoader";
+import toast, { Toaster } from "react-hot-toast";
+import { useTheme } from "next-themes";
+
 const CodeMirror = dynamic(import("../../CodeMirror"), {
   ssr: false,
   loading: () => <EditorSkeleton />,
@@ -23,6 +26,12 @@ const MainQueryResult = ({
   setCurrentQuery,
 }) => {
   const [result, setResult] = useState();
+
+  const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme();
+
+  useEffect(() => setMounted(true), []);
+
   const handleQueriesChange = () => {
     let data = queryData.filter((element) => element.query === currentQuery);
     let queries = [currentQuery, ...queriesState];
@@ -32,6 +41,21 @@ const MainQueryResult = ({
       data = data[0].result;
       setQueriesState(queries);
       setResult(data);
+    } else {
+      let bgColor;
+      let textColor;
+      if (mounted) {
+        bgColor = theme === "light" ? "#333" : "#eee";
+        textColor = theme === "light" ? "#eee" : "#333";
+      }
+
+      toast.error("Please select a query from the list!", {
+        duration: 2000,
+        style: {
+          backgroundColor: bgColor || "#333",
+          color: textColor || "#eee",
+        },
+      });
     }
   };
 
@@ -50,6 +74,7 @@ const MainQueryResult = ({
                 className="bg-green-900 text-green-100 font-bold uppercase text-xs md:text-sm px-3 py-2 md:px-6 md:py-3 rounded shadow-sm hover:shadow-lg outline-none focus:outline-none"
                 type="button"
                 onClick={() => handleQueriesChange()}
+                disabled={!currentQuery}
               >
                 <div className="flex items-center gap-1">
                   <BsPlayFill size={"1.2rem"} />
@@ -74,6 +99,8 @@ const MainQueryResult = ({
           </div>
 
           {/* {result && <Download result={result} />} */}
+
+          <Toaster />
 
           <div className="w-full overflow-auto">
             {result && <Result result={result} />}
