@@ -38,8 +38,6 @@ const Result = ({ result }) => {
         <tbody>
           {result &&
             result.map((row, index) => {
-              const orderedDate = row.orderDate.split(" ")[0];
-              const shippedDate = row.shippedDate.split(" ")[0];
               return (
                 <tr key={index}>
                   <td className="border border-gray-100 dark:border-darkBorder">
@@ -52,10 +50,10 @@ const Result = ({ result }) => {
                     {row.employeeID}
                   </td>
                   <td className="border border-gray-100 dark:border-darkBorder">
-                    {orderedDate}
+                    {row.orderDate}
                   </td>
                   <td className="border border-gray-100 dark:border-darkBorder">
-                    {shippedDate}
+                    {row.shippedDate}
                   </td>
                   <td className="border border-gray-100 dark:border-darkBorder">
                     {row.freight}
@@ -64,7 +62,7 @@ const Result = ({ result }) => {
                     {row.shipName}
                   </td>
                   <td className="border border-gray-100 dark:border-darkBorder">
-                    {row.shipAddress.city}
+                    {row.shipAddress}
                   </td>
                 </tr>
               );

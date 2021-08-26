@@ -98,7 +98,7 @@ const MainQueryResult = ({
             </div>
           </div>
 
-          {/* {result && <Download result={result} />} */}
+          {result && <Download result={result} />}
 
           <Toaster />
 
