@@ -1,7 +1,7 @@
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 
-const Loader = () => {
+const EditorSkeleton = () => {
   return (
     <Skeleton
       className="border-4 border-gray-100 rounded-md w-full"
@@ -10,4 +10,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default EditorSkeleton;

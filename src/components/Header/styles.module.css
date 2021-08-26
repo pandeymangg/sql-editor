@@ -4,6 +4,6 @@
 
 @media (max-width: 768px) {
   .sidebaricon {
-    display: block;
+    display: flex;
   }
 }

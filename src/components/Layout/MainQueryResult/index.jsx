@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { queryData } from "../../../../data";
-import Result from "./Result";
+// import Result from "./Result";
 import { BsPlayFill, BsX } from "react-icons/bs";
 import dynamic from "next/dynamic";
-import Loader from "../../CodeMirror/Loader";
+import EditorSkeleton from "../../Loaders/EditorSkeleton";
+import Download from "../../Download";
+import ResultLoader from "../../Loaders/ResultLoader";
 const CodeMirror = dynamic(import("../../CodeMirror"), {
   ssr: false,
-  loading: () => <Loader />,
+  loading: () => <EditorSkeleton />,
+});
+
+const Result = dynamic(import("../MainQueryResult/Result"), {
+  ssr: false,
+  loading: () => <ResultLoader />,
 });
 
 const MainQueryResult = ({
@@ -40,31 +47,33 @@ const MainQueryResult = ({
             <CodeMirror value={currentQuery} setValue={setCurrentQuery} />
             <div className="editor-controls flex gap-4">
               <button
-                className="bg-green-900 text-green-100 font-bold uppercase text-xs md:text-sm px-3 py-2 md:px-6 md:py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none"
+                className="bg-green-900 text-green-100 font-bold uppercase text-xs md:text-sm px-3 py-2 md:px-6 md:py-3 rounded shadow-sm hover:shadow-lg outline-none focus:outline-none"
                 type="button"
                 onClick={() => handleQueriesChange()}
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1">
                   <BsPlayFill size={"1.2rem"} />
                   <p>Run</p>
                 </div>
               </button>
 
               <button
-                className="bg-red-700 text-white font-bold uppercase text-xs md:text-sm px-3 py-2 md:px-6 md:py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none"
+                className="bg-red-700 text-red-100 font-bold uppercase text-xs md:text-sm px-3 py-2 md:px-6 md:py-3 rounded shadow-sm hover:shadow-lg outline-none focus:outline-none"
                 type="button"
                 onClick={() => {
                   setCurrentQuery();
                   setResult();
                 }}
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1">
                   <BsX size={"1.2rem"} />
                   <p>Clear</p>
                 </div>
               </button>
             </div>
           </div>
+
+          {/* {result && <Download result={result} />} */}
 
           <div className="w-full overflow-auto">
             {result && <Result result={result} />}
@@ -75,6 +84,15 @@ const MainQueryResult = ({
               <p className="font-semibold text-base text-center">
                 Click the little down arrow in the header to open the sample
                 queries menu, you can select any query from that menu!
+              </p>
+            </div>
+          )}
+
+          {!result && (
+            <div className="hidden md:flex">
+              <p className="font-semibold text-base text-center">
+                Choose a sample query from the sidebar, just clicking on a query
+                will paste it in the editor and then you can run it!
               </p>
             </div>
           )}
