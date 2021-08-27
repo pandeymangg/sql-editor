@@ -1,0 +1,11 @@
+.mainPage {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .mainPage {
+    display: flex;
+    flex-direction: column;
+  }
+}
