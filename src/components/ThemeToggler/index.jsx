@@ -3,7 +3,10 @@ import React from "react";
 const ThemeToggler = ({ mounted, theme, setTheme }) => {
   return (
     <div>
-      <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+      <button
+        aria-label="theme toggle button"
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      >
         {mounted && (
           <svg
             xmlns="http://www.w3.org/2000/svg"

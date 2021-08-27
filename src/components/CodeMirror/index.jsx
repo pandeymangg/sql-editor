@@ -33,6 +33,7 @@ const Editor = (props) => {
         onChange={(_, __, value) => {
           props.setValue(value);
         }}
+        name="editor"
       />
     </div>
   );
