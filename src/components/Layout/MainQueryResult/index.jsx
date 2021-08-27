@@ -44,21 +44,31 @@ const MainQueryResult = ({
       setTimeout(() => {
         setResult(data);
         const timeTaken = Math.round(Math.random() * 500);
-        const icon =
-          timeTaken < 300 ? (
-            <div className="text-green-500">
-              <AiOutlineInfoCircle size={"1.2rem"} />
-            </div>
-          ) : (
-            <div className="text-[#ff5722]">
-              <AiOutlineInfoCircle size={"1.2rem"} />
-            </div>
-          );
-        toast(`Query successfully ran in ${timeTaken}ms!`, {
-          icon,
-          duration: 2000,
-          position: "bottom-right",
-        });
+        const icon = (
+          <div className="text-blue-500">
+            <AiOutlineInfoCircle size={"1.2rem"} />
+          </div>
+        );
+        toast(
+          () => (
+            <span>
+              Query successfully ran in{" "}
+              <span
+                className={`${
+                  timeTaken < 300 ? "text-green-500" : "text-[#ff5722]"
+                }`}
+              >
+                {timeTaken}
+              </span>{" "}
+              ms!
+            </span>
+          ),
+          {
+            icon,
+            duration: 2000,
+            position: "bottom-right",
+          }
+        );
       }, 500);
     } else {
       let bgColor;
