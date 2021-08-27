@@ -22,35 +22,18 @@ const Download = ({ result }) => {
     link.click();
   };
 
-  const generateJSON = () => {
-    let csvfile = "data:text/json;charset=utf-8,";
-    var encodedUri = csvfile + encodeURIComponent(JSON.stringify(result));
-    var link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "result.json");
-    document.body.appendChild(link);
-    link.click();
-  };
-
   const onDownload = () => {
-    // const format = document.getElementById("formats").value;
-    const format = "csv";
-
-    if (format === "json") {
-      generateJSON();
-    } else if (format === "csv") {
-      generateCSV();
-    }
+    generateCSV();
   };
 
   return (
-    <div className="w-full flex justify-between items-end">
+    <div className="w-full flex justify-between items-end mb-2 md:mb-0">
       <div>
         <h3 className="text-lg font-medium">OUTPUT</h3>
       </div>
 
       <div
-        className="cursor-pointer flex items-center rounded-2xl hover:shadow-md hover:scale-110 px-5 py-1 bg-[#eee] dark:bg-[#333]"
+        className="cursor-pointer flex items-center rounded-md hover:shadow-md hover:scale-110 px-5 py-1 bg-[#eee] dark:bg-[#333]"
         onClick={() => onDownload()}
       >
         <BsDownload size={"1.2rem"} />
