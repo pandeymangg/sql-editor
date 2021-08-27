@@ -22,7 +22,7 @@ The app is deployed at : **https://sql-editor-chi.vercel.app/**
 - Lazy loading components like the editor and the table using next.js dynamic imports.
 - Using tailwindcss for purging all the unused css in production for better performance.
 
-The app is pretty performant with **Time to Interactive** sitting at just **0.7s** and the **First Contentful Paint (FCP)** is just **0.3s**. This performance gain is achieved by the measures taken above.
+The app is pretty performant with **Time to Interactive** sitting at just **0.7s** and the **First Contentful Paint (FCP)** is just **0.3s**. This performance gain is achieved by the measures taken above. I have used lighthouse tool for calculating these times.
 
 The lighthouse performance score is as shown below:
 
