@@ -1,29 +1,33 @@
-# Next.js + Tailwind CSS Example
+# SQL Editor- Atlan Assignment
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+**Task :** Create a SQL editor view where your users can query easily on a table using SQL, and see the results.
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
+The app is deployed at : **https://sql-editor-chi.vercel.app/**
 
-## Preview
+## Features:
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+- SQL Editor with syntax highlighting and light / dark themes. Queries can be run and the editor can be cleared as well.
+- Light and dark themes in the app, theme is persisted on page reloads.
+- Tables can be exported to csv files.
+- History bar having a list of predefined queries, clicking on a query pastes it in the editor.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+## Technologies Used:
 
-## Deploy your own
+1. Next.js
+2. Tailwindcss
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+## Performance
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+- Using next.js for code splitting and pre rendering pages for increased performance.
+- Lazy loading components like the editor and the table using next.js dynamic imports.
+- Using tailwindcss for purging all the unused css in production for better performance.
 
-## How to use
+The lighthouse performance score is as shown below:
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## User Interface
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+- I have tried to keep the UI very clean and simple for better user experience.
+- Implemented light and dark themes in the app using tailwindcss.
+- The app is fully responsive, the sidebar is converted into a sliding up-down menu on mobile devices!
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Screenshots
