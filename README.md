@@ -24,6 +24,10 @@ The app is deployed at : **https://sql-editor-chi.vercel.app/**
 
 The lighthouse performance score is as shown below:
 
+![Lighthouse performance score](https://raw.githubusercontent.com/anshuman9999/sql-editor/main/public/screenshots/lh-perf.png)
+
+![Lighthouse main score](https://raw.githubusercontent.com/anshuman9999/sql-editor/main/public/screenshots/lh-main.png)
+
 ## User Interface
 
 - I have tried to keep the UI very clean and simple for better user experience.
@@ -31,3 +35,11 @@ The lighthouse performance score is as shown below:
 - The app is fully responsive, the sidebar is converted into a sliding up-down menu on mobile devices!
 
 ## Screenshots
+
+![desktop light](https://raw.githubusercontent.com/anshuman9999/sql-editor/main/public/screenshots/light-desktop.png)
+
+![desktop dark](https://raw.githubusercontent.com/anshuman9999/sql-editor/main/public/screenshots/dark-desktop.png)
+
+![phone menu closed](https://raw.githubusercontent.com/anshuman9999/sql-editor/main/public/screenshots/phone-1.png)
+
+![phone menu open](https://raw.githubusercontent.com/anshuman9999/sql-editor/main/public/screenshots/phone-2.png)
