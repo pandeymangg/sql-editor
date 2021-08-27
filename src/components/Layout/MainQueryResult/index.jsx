@@ -93,7 +93,6 @@ const MainQueryResult = ({
                 className="bg-green-900 text-green-100 font-bold uppercase text-xs md:text-sm px-3 py-2 md:px-6 md:py-3 rounded shadow-sm hover:shadow-lg outline-none focus:outline-none"
                 type="button"
                 onClick={() => handleQueriesChange()}
-                disabled={!currentQuery}
               >
                 <div className="flex items-center gap-1">
                   <BsPlayFill size={"1.2rem"} />

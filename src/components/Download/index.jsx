@@ -44,13 +44,19 @@ const Download = ({ result }) => {
   };
 
   return (
-    <div className="w-full flex justify-between items-center">
+    <div className="w-full flex justify-between items-end">
       <div>
         <h3 className="text-lg font-medium">OUTPUT</h3>
       </div>
 
-      <div className="cursor-pointer" onClick={() => onDownload()}>
+      <div
+        className="cursor-pointer flex items-center rounded-2xl hover:shadow-md hover:scale-110 px-5 py-1 bg-[#eee] dark:bg-[#333]"
+        onClick={() => onDownload()}
+      >
         <BsDownload size={"1.2rem"} />
+        <p className="ml-2 text-base font-medium text-gray-900 dark:text-gray-50">
+          Export
+        </p>
       </div>
     </div>
   );
